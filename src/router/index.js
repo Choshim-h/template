@@ -4,12 +4,12 @@ import Template from '@/layout/template.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
-    {
-      path: '/login',
-      component: () => import('@/views/login/login'),
-      hidden: true
-    },
+const routes = [
+  {
+    path: '/login',
+    component: () => import('@/views/login/login'),
+    hidden: true
+  },
   {
     path: '/',
     name: 'Home',

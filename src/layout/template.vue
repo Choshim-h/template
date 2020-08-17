@@ -1,7 +1,7 @@
 <template>
 <el-container>
   <el-aside width="200px">
-      <nav-bar />
+      <my-head />
   </el-aside>
   <el-main>Main</el-main>
 </el-container>
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import navBar from '@/components/navBar'
+import myHead from '@/components/headerBar'
 
 export default {
     components: {
-        navBar
+        myHead
     }
 };
 </script>
