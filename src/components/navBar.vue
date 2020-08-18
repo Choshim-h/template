@@ -1,28 +1,70 @@
 <template>
-  <div>
-    <el-button @click="drawer = true" type="primary" modal="true" style="margin-left: 16px;">点我打开</el-button>
+  <div class="h-100">
+    <el-row class="tac h-100">
+      <el-col :span="12" class="h-100">
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose"
+          background-color="#304156"
+          text-color="#BFCBD9"
+          active-text-color="#ffd04b"
+          :collapse="isCollapse"
+        >
+          <el-menu-item index="1">
+            <i class="el-icon-menu"></i>
+            <span slot="title">Dashboard</span>
+          </el-menu-item>
 
-    <el-drawer title="我是标题" :visible.sync="drawer" :with-header="false" :direction="direction" >
-      <el-collapse v-model="activeNames" @change="handleChange">
-        <el-collapse-item title="一致性 Consistency" name="1">
-          <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-          <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
-        </el-collapse-item>
-        <el-collapse-item title="反馈 Feedback" name="2">
-          <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
-          <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
-        </el-collapse-item>
-        <el-collapse-item title="效率 Efficiency" name="3">
-          <div>简化流程：设计简洁直观的操作流程；</div>
-          <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
-          <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
-        </el-collapse-item>
-        <el-collapse-item title="可控 Controllability" name="4">
-          <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
-          <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
-        </el-collapse-item>
-      </el-collapse>
-    </el-drawer>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>Example</span>
+            </template>
+            <el-menu-item index="2-1">Tree</el-menu-item>
+            <el-menu-item index="2-2">Tree</el-menu-item>
+          </el-submenu>
+
+          <el-menu-item index="3">
+            <i class="el-icon-menu"></i>
+            <span slot="title">Form</span>
+          </el-menu-item>
+
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>Nested</span>
+            </template>
+            <el-submenu index="4-1">
+              <template slot="title">
+                <span>Nenu1</span>
+              </template>
+              <el-menu-item index="4-1-1">Menu1-1</el-menu-item>
+              <el-submenu index="4-1-2">
+                <template slot="title">
+                  <span>Nenu1-2</span>
+                </template>
+                <el-menu-item index="4-1-2-1">Menu1-2-1</el-menu-item>
+                <el-menu-item index="4-1-2-2">Menu1-2-2</el-menu-item>
+              </el-submenu>
+              <el-menu-item index="4-1-3">Menu1-3</el-menu-item>
+            </el-submenu>
+            <el-menu-item index="4-2">Nenu2</el-menu-item>
+          </el-submenu>
+
+          <el-menu-item index="5">
+            <i class="el-icon-menu"></i>
+            <span slot="title">External Link</span>
+          </el-menu-item>
+
+          <el-menu-item index="6">
+            <i class="el-icon-menu"></i>
+            <span slot="title">Donate</span>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -30,23 +72,33 @@
 export default {
   data() {
     return {
-      drawer: false,
-      direction: 'ltr',
-      activeNames: ["1"]
+      isCollapse: false
     };
   },
   methods: {
-    handleChange(val) {
-      console.log(val);
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
 };
 </script>
 
 <style>
+body{
+  margin: 0px;
+}
+body,
+html,
+.h-100,
+.el-menu {
+  height: 100%;
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+  height: 100%;
 }
 </style>
 
