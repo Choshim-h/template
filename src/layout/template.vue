@@ -9,6 +9,7 @@
     <!-- 主要内容区域 -->
     <el-main>
       <my-head/>
+      <router-view />
     </el-main>
     <!-- end -->
   </el-container>
@@ -34,6 +35,10 @@ export default {
 }
 .el-aside {
   overflow-x: hidden !important;
+}
+a{
+  color: #BFCBD9;
+  text-decoration: none;
 }
 </style>
 

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Template from '@/layout/template.vue'
+import Dashboard from '@/views/Dashboard/Dashboard'
+import Tree from '@/views/Example/Tree'
 
 Vue.use(VueRouter)
 
@@ -12,8 +14,25 @@ const routes = [
   },
   {
     path: '/',
-    name: 'Home',
-    component: Template
+    name: 'Template',
+    component: Template,
+    children: [
+      {
+        path: '/Dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
+      },
+      {
+        path: '/Example/Tree',
+        name: 'Tree',
+        component: Tree,
+      },
+      {
+        path: '/Dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
+      },
+    ]
   },
 ]
 

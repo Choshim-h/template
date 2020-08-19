@@ -17,14 +17,13 @@
               alt
               srcset
             >
-            <i class="el-icon-arrow-down el-icon--right"></i>
+            <i class="el-icon-caret-bottom el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-            <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-            <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-            <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-            <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
+            <el-dropdown-item >Home</el-dropdown-item>
+            <el-dropdown-item >Github</el-dropdown-item>
+            <el-dropdown-item >Docs</el-dropdown-item>
+            <el-dropdown-item divided>Log Out</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -47,7 +46,8 @@ export default {
   height: 50px;
   overflow: hidden;
   box-sizing: border-box;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  box-shadow: 0px 1px 4px rgba(0, 21, 41, 0.8);
 }
 .w-80 {
   width: 80%;
