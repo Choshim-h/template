@@ -3,7 +3,7 @@
     <div class="row">
       <div class="w-80">
         <div class="grid-content bg-purple-light">
-          <i class="el-icon-s-unfold"></i>
+          <i class="el-icon-s-unfold" :label="exhibition" @click="getnav()"></i>
           <div class="unfold">
             <span>Dashboard</span>
           </div>
@@ -33,7 +33,17 @@
 
 <script>
 export default {
-  components: {}
+  data(){
+    return{
+      exhibition: false
+    }
+  },
+methods:{
+  getnav(){
+    console.log(this.exhibition)
+    this.exhibition = !this.exhibition
+  }
+}
 };
 </script>
 
